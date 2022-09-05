@@ -62,9 +62,20 @@ public class GiftCard {
         this.fecha = fecha;
     }
     
-    public void generarCodigo()
+    public long generarCodigo(long codigo)
     {
-        this.codigo++;
+        return this.codigo = codigo + 1;
+    }
+
+    public String datos() {
+        return "*** Datos de la GiftCard\n" + 
+                "Codigo         : " + codigo + "\n" + 
+                "Clave          : " + clave + "\n" + 
+                "Monto          : " + monto + "\n" + 
+                "Fecha          : " + fecha + "\n" + 
+                "Rut            : " + trabajador.getRut() + "-" + trabajador.getDv()+"\n" + 
+                "Nombre         : " + trabajador.getNombre()
+                ;
     }
     
 }

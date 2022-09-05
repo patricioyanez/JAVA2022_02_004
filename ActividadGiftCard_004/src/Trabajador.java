@@ -44,5 +44,10 @@ public class Trabajador {
 
     // 4.- métodos customer
 
+    @Override
+    public String toString() {
+        return "Trabajador{" + "rut=" + rut + ", dv=" + dv + ", nombre=" + nombre + '}';
+    }
+
 
 }
