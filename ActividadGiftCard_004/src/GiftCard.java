@@ -77,5 +77,19 @@ public class GiftCard {
                 "Nombre         : " + trabajador.getNombre()
                 ;
     }
+    public void generarClave()
+    {
+        String rut = "" + trabajador.getRut();
+        rut = rut.substring(0, 4);
+                    // convierte un string en un nro
+        this.clave = Integer.parseInt(rut);
+    }
     
+    public boolean verificarSaldo(int valorCompra)
+    {
+        if(valorCompra> this.monto)
+            return false;
+        else
+            return true;
+    }
 }
