@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Date;
 
 public class GiftCard {
@@ -89,6 +90,27 @@ public class GiftCard {
     {
         if(valorCompra> this.monto)
             return false;
+        else
+            return true;
+    }
+    public int descontar(int montoPorDescontar)
+    {
+        if(verificarSaldo(montoPorDescontar))
+        {
+            this.monto -= montoPorDescontar;
+            return this.monto;
+        }
+        else
+        {
+            return -1;// no hay saldo suficiente
+        }
+    }
+    public boolean vigencia()
+    {
+        if(this.fecha.before(java.sql.Date.valueOf(LocalDate.now())))
+        {
+            return false;
+        }
         else
             return true;
     }
