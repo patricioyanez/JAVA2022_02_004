@@ -14,5 +14,24 @@ public class Principal {
         mall.agregar(e3);
         
         mall.listar();
+        
+        if(mall.buscarEmpleado("2-7"))
+            System.out.println("El empleado existe");
+        else
+            System.out.println("Empleado no existe");
+        
+        if(mall.buscarEmpleado("10-8")){
+            System.out.println("El empleado existe");
+        } else {
+            System.out.println("Empleado no existe");
+        }
+        
+        if (mall.eliminar("1-9")) {
+            System.out.println("Rut eliminado");
+        } else {
+            System.out.println("Rut no eliminado");
+        }
+        
+        mall.listar();
     }
 }
