@@ -20,4 +20,19 @@ public class Empresa {
         }
         return false;
     }
+    public void listar()
+    {
+        System.out.println("***** Listado de empleados *****");
+        for (Empleado empleado : empleados) {
+            System.out.println(empleado.datos());
+        }
+    }
+    public boolean eliminar(String rut)
+    {
+        for (Empleado empleado : empleados) {
+            if(empleado.getRut().equalsIgnoreCase(rut))
+                return empleados.remove(empleado);
+        }
+        return false;
+    }
 }

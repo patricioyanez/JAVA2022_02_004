@@ -71,8 +71,6 @@ public class Empleado {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-
-
     public String datos() {
         return "Empleado:" + 
                 "\nrut              = " + rut + 
@@ -80,7 +78,7 @@ public class Empleado {
                 "\ngenero           = " + genero + 
                 "\naños de Servicio = " + aniosServicio + 
                 "\nedad             = " + edad + 
-                puesto.datos();
+                "\n" +puesto.datos();
     }
     
     
