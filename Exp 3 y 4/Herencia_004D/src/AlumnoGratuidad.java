@@ -13,7 +13,7 @@ public class AlumnoGratuidad extends Alumno {
     public void setActiva(boolean activa) {
         this.activa = activa;
     }
-    
+    // sobre escritura
     @Override
     public String datos()
     {
@@ -21,7 +21,7 @@ public class AlumnoGratuidad extends Alumno {
                 "\nCarrera      : " + super.getCarrera() +
                 "\nEstá activo  : " + (activa ? "Si": "No");
     }
-    
+    // sobre carga
     public void valorMatricula()
     {
         if(activa)
@@ -35,8 +35,8 @@ public class AlumnoGratuidad extends Alumno {
     }
     public void valorMatricula(int valor, int descuento)
     {
-        float total = valor * descuento / 100;
-        System.out.println("El valor es: " + total);            
+        float total = valor - (valor * descuento / 100);
+        System.out.println("El valor es: " + (int)total);            
     }
     
     

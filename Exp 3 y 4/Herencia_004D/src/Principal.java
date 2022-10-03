@@ -8,5 +8,9 @@ public class Principal {
         ag.setHablaEspanol(true);
         
         System.out.println(ag.datos());
+        
+        ag.valorMatricula();
+        ag.valorMatricula(230000);
+        ag.valorMatricula(230000,10);
     }
 }
