@@ -6,11 +6,13 @@ public class Principal {
         ag.setNombre("Luis");
         ag.setCarrera("Informática");
         ag.setHablaEspanol(true);
+        ag.setActiva(true);
         
         System.out.println(ag.datos());
         
         ag.valorMatricula();
         ag.valorMatricula(230000);
         ag.valorMatricula(230000,10);
+
     }
 }
