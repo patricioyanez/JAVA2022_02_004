@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Modelo.Persona;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author patri
  */
 public class frmPersona extends javax.swing.JFrame {
-
+    private Persona persona = new Persona();
     /**
      * Creates new form frmPersona
      */
@@ -158,6 +159,32 @@ public class frmPersona extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, "Falta Rut");
             txtRut.requestFocus();
+        }
+        else if(txtNombre.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta Nombre");
+            txtNombre.requestFocus();
+        }
+        else if(txtApellido.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta Apellido");
+            txtApellido.requestFocus();
+        }
+        else if(txtDireccion.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta Dirección");
+            txtDireccion.requestFocus();
+        }
+        else
+        {
+            // traspasamos los datos al objeto(persona)
+            persona.setRut(txtRut.getText().trim());
+            persona.setNombre(txtNombre.getText().trim());
+            persona.setApellido(txtApellido.getText().trim());
+            persona.setDireccion(txtDireccion.getText().trim());
+            
+            JOptionPane.showMessageDialog(this, "Datos Guardado");
+            JOptionPane.showMessageDialog(this, persona.imprimirDatos());
         }
         
         

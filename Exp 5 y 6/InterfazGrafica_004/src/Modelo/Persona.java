@@ -61,4 +61,12 @@ public class Persona {
         this.apellido = "";
         this.direccion = "";
     }
+    
+    public String imprimirDatos()
+    {
+        return  "rut        : " + this.rut + "\n" +
+                "Nombre     : " + this.nombre + "\n" +
+                "Apellido   : " + this.apellido + "\n" +
+                "direccion  : " + this.direccion;
+    }
 }
