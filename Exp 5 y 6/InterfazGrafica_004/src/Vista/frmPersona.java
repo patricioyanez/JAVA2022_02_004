@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author patri
@@ -43,8 +45,8 @@ public class frmPersona extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registro de persona");
         setBackground(new java.awt.Color(204, 204, 204));
-        setMaximumSize(new java.awt.Dimension(560, 390));
-        setMinimumSize(new java.awt.Dimension(550, 380));
+        setMaximumSize(new java.awt.Dimension(560, 450));
+        setMinimumSize(new java.awt.Dimension(550, 450));
         setPreferredSize(new java.awt.Dimension(550, 350));
         setResizable(false);
 
@@ -67,6 +69,11 @@ public class frmPersona extends javax.swing.JFrame {
         });
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnBuscar.setText("Buscar");
 
@@ -128,7 +135,7 @@ public class frmPersona extends javax.swing.JFrame {
                     .addComponent(btnLimpiar)
                     .addComponent(btnGuardar)
                     .addComponent(btnBuscar))
-                .addGap(0, 70, Short.MAX_VALUE))
+                .addGap(0, 90, Short.MAX_VALUE))
         );
 
         pack();
@@ -142,6 +149,20 @@ public class frmPersona extends javax.swing.JFrame {
         txtDireccion.setText("");
         txtRut.requestFocus();
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+        
+        // validar
+        if(txtRut.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta Rut");
+            txtRut.requestFocus();
+        }
+        
+        
+        
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
