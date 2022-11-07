@@ -19,7 +19,7 @@ public class Conexion {
         Connection connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PGY2121", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/automotora", "root", "");
             System.out.println("Conexión exitosa");
         } catch (SQLException e) {
             System.out.println("Error de conexión" + e.getMessage());
@@ -27,5 +27,9 @@ public class Conexion {
             System.out.println(ex.getMessage());
         }
         return connection;
+    }
+    
+    public static void main(String[] args) {
+        new Conexion().obtenerConexion();
     }
 }
