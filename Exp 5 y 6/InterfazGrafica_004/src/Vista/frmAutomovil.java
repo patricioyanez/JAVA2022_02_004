@@ -181,8 +181,6 @@ public class frmAutomovil extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-
-
         Automovil auto = new Automovil();
         
         auto.setPatente(txtPatente.getText());
@@ -200,6 +198,8 @@ public class frmAutomovil extends javax.swing.JFrame {
         auto.setEncendidoElectronico(chkEncendidoElectronico.isSelected());
         
         //JOptionPane.showMessageDialog(this, auto.obtenerDatos());
+        
+        
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
