@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.CAutomovil;
 import Modelo.Automovil;
 import javax.swing.JOptionPane;
 
@@ -196,8 +197,12 @@ public class frmAutomovil extends javax.swing.JFrame {
         
         
         auto.setEncendidoElectronico(chkEncendidoElectronico.isSelected());
-        
-        //JOptionPane.showMessageDialog(this, auto.obtenerDatos());
+        CAutomovil controlador = new CAutomovil();
+        boolean resultado = controlador.agregar(auto);
+        if(resultado)
+            JOptionPane.showMessageDialog(this, "Datos guardados");
+        else
+            JOptionPane.showMessageDialog(this, "Error en la sentencia");
         
         
     }//GEN-LAST:event_btnGuardarActionPerformed
