@@ -22,11 +22,12 @@ CREATE TABLE ADMINISTRATIVO
     SUELDO              INT             NOT NULL,
     UNIQUE(RUT)
 );
-
+DROP TABLE AUTOMOVIL;
 CREATE TABLE AUTOMOVIL
 (
     IDAUTOMOVIL         INT             PRIMARY KEY AUTO_INCREMENT,
-    PATENTE             VARCHAR(6)      NOT NULL,       
+    PATENTE             VARCHAR(6)      NOT NULL,
+    NUMEROPUERTAS       INT             NOT NULL,       
     CILINDRADA          DECIMAL(2,1)    NOT NULL,       
     COLOR               VARCHAR(50)     NOT NULL,
     MARCA               VARCHAR(50)     NOT NULL,
