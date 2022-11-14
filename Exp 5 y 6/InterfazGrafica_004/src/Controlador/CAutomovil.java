@@ -78,9 +78,9 @@ public class CAutomovil {
     {
         Connection cnx = conexion.obtenerConexion();
         
-        String sql = "UPDATE AUTOMOVIL SET"
-                + "numeropuertas = ?, cilindrada = ?, color = ?, marca = ?, modelo = ?, "
-                + "anio = ?, encendidoelectronico = ?, tipocombustible = ? "
+        String sql = "UPDATE AUTOMOVIL SET "
+                + "NUMEROPUERTAS = ?, CILINDRADA = ?, COLOR = ?, MARCA = ?, MODELO = ?, "
+                + "ANIO = ?, ENCENDIDOELECTRONICO = ?, TIPOCOMBUSTIBLE = ? "
                 + " WHERE PATENTE = ?";
         PreparedStatement stmt;
         try {
