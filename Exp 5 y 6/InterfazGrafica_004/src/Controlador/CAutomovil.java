@@ -73,5 +73,35 @@ public class CAutomovil {
         return null;
         
     }
-    
+  
+    public boolean modificar(Automovil automovil) 
+    {
+        Connection cnx = conexion.obtenerConexion();
+        
+        String sql = "UPDATE AUTOMOVIL SET"
+                + "numeropuertas = ?, cilindrada = ?, color = ?, marca = ?, modelo = ?, "
+                + "anio = ?, encendidoelectronico = ?, tipocombustible = ? "
+                + " WHERE PATENTE = ?";
+        PreparedStatement stmt;
+        try {
+            stmt = cnx.prepareStatement(sql);
+            stmt.setInt(1, automovil.getNumeroPuerta());
+            stmt.setDouble(2, automovil.getCilindrada());
+            stmt.setString(3, automovil.getColor());
+            stmt.setString(4, automovil.getMarca());
+            stmt.setString(5, automovil.getModelo());
+            stmt.setInt(6, automovil.getAnio());
+            stmt.setInt(7, (automovil.isEncendidoElectronico()?1:0));
+            stmt.setString(8, automovil.getTipoCombustible());
+            stmt.setString(9, automovil.getPatente());
+
+            stmt.executeUpdate();
+            stmt.close();
+            cnx.close();
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Error de conexión" + ex.getMessage());
+            return false;
+        }
+    }
 }
