@@ -23,7 +23,7 @@ public class CAutomovil {
             stmt = cnx.prepareStatement(sql);
             stmt.setString(1, automovil.getPatente());
             stmt.setInt(2, automovil.getNumeroPuerta());
-            stmt.setDouble(3, automovil.getNumeroPuerta());
+            stmt.setDouble(3, automovil.getCilindrada());
             stmt.setString(4, automovil.getColor());
             stmt.setString(5, automovil.getMarca());
             stmt.setString(6, automovil.getModelo());

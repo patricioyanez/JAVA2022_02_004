@@ -289,12 +289,16 @@ public class frmAutomovil extends javax.swing.JFrame {
             }
             else
             {
+                // del obj al form
                 txtPatente.setText(automovil.getPatente());
-                txtPatente.setText(automovil.getPatente());
-                txtPatente.setText(automovil.getPatente());
-                txtPatente.setText(automovil.getPatente());
-                txtPatente.setText(automovil.getPatente());
-                txtPatente.setText(automovil.getPatente());
+                txtNumeroPuertas.setText("" + automovil.getNumeroPuerta());
+                txtCilindrada.setText("" + automovil.getCilindrada());
+                txtColor.setText(automovil.getColor());
+                txtMarca.setText(automovil.getMarca());
+                txtModelo.setText(automovil.getModelo());
+                txtAnio.setText("" + automovil.getAnio());
+                chkEncendidoElectronico.setSelected(automovil.isEncendidoElectronico());
+                txtTipoCombustible.setText(automovil.getTipoCombustible());
             }
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
