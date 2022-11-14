@@ -55,8 +55,8 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="122" pref="122" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtCilindrada1" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
-                          <Component id="txtPuertas" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="txtAnio" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
+                          <Component id="txtNumeroPuertas" min="-2" pref="71" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -73,8 +73,8 @@
                           <Component id="chkEncendidoElectronico" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="txtCilindrada" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
                           <Component id="txtModelo" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtMarca1" max="32767" attributes="0"/>
-                          <Component id="txtMarca2" max="32767" attributes="0"/>
+                          <Component id="txtColor" max="32767" attributes="0"/>
+                          <Component id="txtTipoCombustible" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -96,7 +96,7 @@
               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtPuertas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNumeroPuertas" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -106,7 +106,7 @@
               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtMarca1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtColor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -121,7 +121,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtCilindrada1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAnio" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -131,7 +131,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtMarca2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtTipoCombustible" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -153,11 +153,19 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtPatente">
     </Component>
+    <Component class="javax.swing.JTextField" name="txtNumeroPuertas">
+    </Component>
     <Component class="javax.swing.JTextField" name="txtCilindrada">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPuertas">
+    <Component class="javax.swing.JTextField" name="txtColor">
     </Component>
     <Component class="javax.swing.JTextField" name="txtMarca">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtModelo">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtAnio">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtTipoCombustible">
     </Component>
     <Component class="javax.swing.JCheckBox" name="chkEncendidoElectronico">
       <Properties>
@@ -186,6 +194,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnCerrar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cerrar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCerrarActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -221,40 +237,24 @@
         <Property name="text" type="java.lang.String" value="Modelo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnCerrar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cerrar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCerrarActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
         <Property name="text" type="java.lang.String" value="Encendido Electr&#xf3;nico"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtModelo">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
         <Property name="text" type="java.lang.String" value="A&#xf1;o"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtCilindrada1">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtMarca1">
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
         <Property name="text" type="java.lang.String" value="Color"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtMarca2">
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Color"/>
+        <Property name="text" type="java.lang.String" value="Tipo Combustible"/>
       </Properties>
     </Component>
   </SubComponents>

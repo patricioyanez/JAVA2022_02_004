@@ -33,27 +33,27 @@ public class frmAutomovil extends javax.swing.JFrame {
 
         jLabel8 = new javax.swing.JLabel();
         txtPatente = new javax.swing.JTextField();
+        txtNumeroPuertas = new javax.swing.JTextField();
         txtCilindrada = new javax.swing.JTextField();
-        txtPuertas = new javax.swing.JTextField();
+        txtColor = new javax.swing.JTextField();
         txtMarca = new javax.swing.JTextField();
+        txtModelo = new javax.swing.JTextField();
+        txtAnio = new javax.swing.JTextField();
+        txtTipoCombustible = new javax.swing.JTextField();
         chkEncendidoElectronico = new javax.swing.JCheckBox();
         btnLimpiar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        btnCerrar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        txtModelo = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtCilindrada1 = new javax.swing.JTextField();
-        txtMarca1 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        txtMarca2 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,6 +83,13 @@ public class frmAutomovil extends javax.swing.JFrame {
             }
         });
 
+        btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarActionPerformed(evt);
+            }
+        });
+
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("Registro de Automovil");
 
@@ -96,20 +103,13 @@ public class frmAutomovil extends javax.swing.JFrame {
 
         jLabel6.setText("Modelo");
 
-        btnCerrar.setText("Cerrar");
-        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrarActionPerformed(evt);
-            }
-        });
-
         jLabel7.setText("Encendido Electrónico");
 
         jLabel9.setText("Año");
 
         jLabel10.setText("Color");
 
-        jLabel11.setText("Color");
+        jLabel11.setText("Tipo Combustible");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,8 +143,8 @@ public class frmAutomovil extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(122, 122, 122)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCilindrada1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPuertas, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumeroPuertas, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
@@ -158,8 +158,8 @@ public class frmAutomovil extends javax.swing.JFrame {
                             .addComponent(chkEncendidoElectronico)
                             .addComponent(txtCilindrada, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtModelo)
-                            .addComponent(txtMarca1)
-                            .addComponent(txtMarca2))))
+                            .addComponent(txtColor)
+                            .addComponent(txtTipoCombustible))))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -175,7 +175,7 @@ public class frmAutomovil extends javax.swing.JFrame {
                 .addGap(1, 1, 1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(txtPuertas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNumeroPuertas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -183,7 +183,7 @@ public class frmAutomovil extends javax.swing.JFrame {
                 .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(txtMarca1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -195,7 +195,7 @@ public class frmAutomovil extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(txtCilindrada1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -203,7 +203,7 @@ public class frmAutomovil extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(txtMarca2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTipoCombustible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -221,18 +221,26 @@ public class frmAutomovil extends javax.swing.JFrame {
         Automovil auto = new Automovil();
         
         auto.setPatente(txtPatente.getText());
+        
+        // convertir de text a int
+        int puerta = Integer.parseInt(txtNumeroPuertas.getText());
+        auto.setNumeroPuerta(puerta);
         // convertir de text a double
         double numero = Double.parseDouble(txtCilindrada.getText());
         auto.setCilindrada(numero);
         
-        int puerta = Integer.parseInt(txtPuertas.getText());
-        auto.setNumeroPuerta(puerta);
         
+        auto.setColor(txtColor.getText());
         auto.setMarca(txtMarca.getText());
         auto.setModelo(txtModelo.getText());
         
+        int anio = Integer.parseInt(txtAnio.getText());
+        auto.setAnio(anio);
         
         auto.setEncendidoElectronico(chkEncendidoElectronico.isSelected());
+        
+        auto.setTipoCombustible(txtTipoCombustible.getText());
+        
         CAutomovil controlador = new CAutomovil();
         boolean resultado = controlador.agregar(auto);
         if(resultado)
@@ -250,12 +258,15 @@ public class frmAutomovil extends javax.swing.JFrame {
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         // TODO add your handling code here:
-                txtPatente.setText("");
+        txtPatente.setText("");
+        txtNumeroPuertas.setText("");
         txtCilindrada.setText("");
-        txtPuertas.setText("");
+        txtColor.setText("");
         txtMarca.setText("");
         txtModelo.setText("");
+        txtAnio.setText("");
         chkEncendidoElectronico.setSelected(false);
+        txtTipoCombustible.setText("");
         txtPatente.requestFocus();
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
@@ -340,13 +351,13 @@ public class frmAutomovil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField txtAnio;
     private javax.swing.JTextField txtCilindrada;
-    private javax.swing.JTextField txtCilindrada1;
+    private javax.swing.JTextField txtColor;
     private javax.swing.JTextField txtMarca;
-    private javax.swing.JTextField txtMarca1;
-    private javax.swing.JTextField txtMarca2;
     private javax.swing.JTextField txtModelo;
+    private javax.swing.JTextField txtNumeroPuertas;
     private javax.swing.JTextField txtPatente;
-    private javax.swing.JTextField txtPuertas;
+    private javax.swing.JTextField txtTipoCombustible;
     // End of variables declaration//GEN-END:variables
 }

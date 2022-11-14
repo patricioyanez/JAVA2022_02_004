@@ -60,8 +60,8 @@ public class CAutomovil {
                 automovil.setMarca(rs.getString("MARCA"));
                 automovil.setModelo(rs.getString("MODELO"));
                 automovil.setAnio(rs.getInt("ANIO"));
-                automovil.setEncendidoElectronico(rs.getInt("ENCENDIDOELECTRONICO")==1?true:false);
-                automovil.setPatente(rs.getString("TIPOCOMBUSTIBLE"));
+                automovil.setEncendidoElectronico((rs.getInt("ENCENDIDOELECTRONICO")==1?true:false));
+                automovil.setTipoCombustible(rs.getString("TIPOCOMBUSTIBLE"));
                 
                 return automovil;
             }
