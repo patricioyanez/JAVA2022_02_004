@@ -3,6 +3,7 @@ import Conexion.Conexion;
 import Modelo.Automovil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,4 +40,38 @@ public class CAutomovil {
             return false;
         }
     }
+    
+    public Automovil buscarPorPatente(String patente)
+    {
+        try {
+            Connection cnx = conexion.obtenerConexion();
+            String sql = "SELECT * FROM AUTOMOVIL WHERE PATENTE = ?";
+            PreparedStatement sp = cnx.prepareStatement(sql);
+            sp.setString(1, patente);
+            ResultSet rs = sp.executeQuery();
+            
+            if(rs.next())
+            {
+                Automovil automovil = new Automovil();
+                automovil.setPatente(rs.getString("PATENTE"));
+                automovil.setNumeroPuerta(rs.getInt("NUMEROPUERTAS"));
+                automovil.setCilindrada(rs.getDouble("CILINDRADA"));
+                automovil.setColor(rs.getString("COLOR"));
+                automovil.setMarca(rs.getString("MARCA"));
+                automovil.setModelo(rs.getString("MODELO"));
+                automovil.setAnio(rs.getInt("ANIO"));
+                automovil.setEncendidoElectronico(rs.getInt("ENCENDIDOELECTRONICO")==1?true:false);
+                automovil.setPatente(rs.getString("TIPOCOMBUSTIBLE"));
+                
+                return automovil;
+            }
+            else
+                return null;
+        } catch (SQLException ex) {
+            Logger.getLogger(CAutomovil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+        
+    }
+    
 }
