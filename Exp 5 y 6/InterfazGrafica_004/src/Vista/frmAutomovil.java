@@ -42,6 +42,7 @@ public class frmAutomovil extends javax.swing.JFrame {
         txtTipoCombustible = new javax.swing.JTextField();
         chkEncendidoElectronico = new javax.swing.JCheckBox();
         btnBuscar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
@@ -67,6 +68,13 @@ public class frmAutomovil extends javax.swing.JFrame {
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
+            }
+        });
+
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
             }
         });
 
@@ -99,7 +107,7 @@ public class frmAutomovil extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel1.setText("Registro de Automovil");
+        jLabel1.setText("Registro de Automóvil");
 
         jLabel2.setText("Patente");
 
@@ -151,7 +159,9 @@ public class frmAutomovil extends javax.swing.JFrame {
                                 .addGap(75, 75, 75)
                                 .addComponent(txtPatente, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnBuscar))
+                                .addComponent(btnBuscar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnEliminar))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(122, 122, 122)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +194,8 @@ public class frmAutomovil extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtPatente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscar))
+                    .addComponent(btnBuscar)
+                    .addComponent(btnEliminar))
                 .addGap(1, 1, 1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -355,6 +366,30 @@ public class frmAutomovil extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnModificarActionPerformed
 
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        if(txtPatente.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta patente");
+            txtPatente.requestFocus();
+        }
+        else
+        {
+            CAutomovil controlador = new CAutomovil();
+            boolean respuesta = controlador.eliminar(txtPatente.getText().trim());
+            
+            if(respuesta)
+            {
+                JOptionPane.showMessageDialog(this, "Patente eliminada");
+                btnLimpiar.doClick();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Patente no fue encontrada");
+            }
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -393,6 +428,7 @@ public class frmAutomovil extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCerrar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificar;
