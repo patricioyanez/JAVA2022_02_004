@@ -78,6 +78,7 @@ public class frmAutomovil extends javax.swing.JFrame {
         });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.setEnabled(false);
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
@@ -99,6 +100,7 @@ public class frmAutomovil extends javax.swing.JFrame {
         });
 
         btnModificar.setText("Modificar");
+        btnModificar.setEnabled(false);
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModificarActionPerformed(evt);
@@ -327,7 +329,11 @@ public class frmAutomovil extends javax.swing.JFrame {
         CAutomovil controlador = new CAutomovil();
         boolean resultado = controlador.agregar(auto);
         if(resultado)
+        {
             JOptionPane.showMessageDialog(this, "Datos guardados");
+            btnLimpiar.doClick();
+            btnListar.doClick();
+        }
         else
             JOptionPane.showMessageDialog(this, "Error en la sentencia");
         
@@ -351,6 +357,8 @@ public class frmAutomovil extends javax.swing.JFrame {
         chkEncendidoElectronico.setSelected(false);
         txtTipoCombustible.setText("");
         txtPatente.requestFocus();
+        btnModificar.setEnabled(false);
+        btnEliminar.setEnabled(false);
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -382,6 +390,8 @@ public class frmAutomovil extends javax.swing.JFrame {
                 txtAnio.setText("" + automovil.getAnio());
                 chkEncendidoElectronico.setSelected(automovil.isEncendidoElectronico());
                 txtTipoCombustible.setText(automovil.getTipoCombustible());
+                btnModificar.setEnabled(true);
+                btnEliminar.setEnabled(true);
             }
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
@@ -418,6 +428,7 @@ public class frmAutomovil extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, "Datos guardados");
             btnLimpiar.doClick();
+                btnListar.doClick();
         }
         else
             JOptionPane.showMessageDialog(this, "Error en la sentencia");
@@ -440,6 +451,7 @@ public class frmAutomovil extends javax.swing.JFrame {
             {
                 JOptionPane.showMessageDialog(this, "Patente eliminada");
                 btnLimpiar.doClick();
+                btnListar.doClick();
             }
             else
             {
