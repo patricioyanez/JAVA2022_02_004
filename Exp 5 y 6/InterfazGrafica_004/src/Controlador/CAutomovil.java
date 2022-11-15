@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -121,6 +122,36 @@ public class CAutomovil {
         }
         return false;
         
+    }
+  
+    
+    public ArrayList<Automovil> buscarTodos()
+    {
+        ArrayList<Automovil> listado = new ArrayList<Automovil>();
+        try {
+            Connection cnx = conexion.obtenerConexion();
+            String sql = "SELECT * FROM AUTOMOVIL";
+            PreparedStatement sp = cnx.prepareStatement(sql);
+            //  sp.setString(1, patente); // no se ocupará pero lo pueden agregar
+            ResultSet rs = sp.executeQuery();
+            while(rs.next())
+            {
+                Automovil automovil = new Automovil();
+                automovil.setPatente(rs.getString("PATENTE"));
+                automovil.setNumeroPuerta(rs.getInt("NUMEROPUERTAS"));
+                automovil.setCilindrada(rs.getDouble("CILINDRADA"));
+                automovil.setColor(rs.getString("COLOR"));
+                automovil.setMarca(rs.getString("MARCA"));
+                automovil.setModelo(rs.getString("MODELO"));
+                automovil.setAnio(rs.getInt("ANIO"));
+                automovil.setEncendidoElectronico((rs.getInt("ENCENDIDOELECTRONICO")==1?true:false));
+                automovil.setTipoCombustible(rs.getString("TIPOCOMBUSTIBLE"));
+                listado.add(automovil);                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CAutomovil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listado;
     }
   
 }
