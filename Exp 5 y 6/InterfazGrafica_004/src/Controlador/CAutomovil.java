@@ -104,4 +104,23 @@ public class CAutomovil {
             return false;
         }
     }
+
+    public Boolean eliminar(String patente)
+    {
+        try {
+            Connection cnx = conexion.obtenerConexion();
+            String sql = "DELETE FROM AUTOMOVIL WHERE PATENTE = ?";
+            PreparedStatement sp = cnx.prepareStatement(sql);
+            sp.setString(1, patente);
+            sp.executeUpdate();
+            sp.close();
+            cnx.close();
+            return true;            
+        } catch (SQLException ex) {
+            Logger.getLogger(CAutomovil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+        
+    }
+  
 }
